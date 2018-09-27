@@ -1,0 +1,24 @@
+</div>
+</body>
+</html>
+<script>
+		$(".tip").hide();
+		$("#identifying").on("blur",function(){
+			if($(this).val()!=$("#ifg").html()){
+				$(this).closest(".control-group").addClass("error");
+				$(".tip").show();
+			}else{
+				$(this).closest(".control-group").removeClass("error");
+				$(".tip").hide();
+			}
+		})
+		$("#question").on("blur",function(){
+			if($(":selected").val() == $(this).children(":last").val()){
+				$("#answer1").hide().removeAttr('data-rules');
+				$("#answer2").show().attr('data-rules','required');
+			}else{
+				$("#answer1").show().attr('data-rules','required');
+				$("#answer2").hide().removeAttr('data-rules');
+			}
+		})
+</script>
